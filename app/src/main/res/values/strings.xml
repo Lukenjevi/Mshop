@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Mshop</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="email">Email</string>
+    <string name="pass">Password</string>
+    <string name="login">Login</string>
+    <string name="forget">Forgot your password?</string>
+    <string name="register">Register</string>
+    <string name="signin">Sign In:</string>
+    <string name="invalidpass">Invalid Password or email</string>
+    <string name="invalide">invalid email/password or unregistred</string>
+    <string name="invemail">Invalid email address</string>
+    <string name="facebook_app_id">118507538780291</string>
+    <string name="fb_login_protocol_scheme">fb118507538780291</string>
+    <string name="Send">Send</string>
+    <string name="reset">Reset Password</string>
+    <string name="recsend">Your recovery email was successfully sent.</string>
+    <string name="name">Name</string>
+    <string name="cancel">Cancel</string>
+    <string name="Regfailed">Invalid credentials or existing user</string>
+    <string name="invalidereg">Registration failed!</string>
+    <string name="logout">Logout</string>
+    <string name="logouttitle">Logout</string>
+    <string name="logoutmsg">Do you want to Logout?</string>
+</resources>
