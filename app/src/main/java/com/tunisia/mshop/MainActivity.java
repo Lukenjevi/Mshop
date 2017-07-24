@@ -1,8 +1,12 @@
 package com.tunisia.mshop;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ProgressBar;
 
+import com.facebook.login.LoginManager;
 import com.google.firebase.auth.FirebaseAuth;
 import com.tunisia.mshop.authentification.LoginActivity;
 
@@ -27,6 +32,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("My Store");
         mAuth = FirebaseAuth.getInstance();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -70,16 +76,39 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        if (id == R.id.mybutton) {
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            AlertDialog.Builder builder;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                builder = new AlertDialog.Builder(MainActivity.this, R.style.myDialog);
+            } else {
+                builder = new AlertDialog.Builder(MainActivity.this);
+            }
+            builder.setTitle(R.string.logouttitle)
+                    .setMessage(R.string.logoutmsg)
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            //Logout Proceeed
+                            mAuth.signOut();
+                            LoginManager.getInstance().logOut();
+                            Intent LoginIntent = new Intent(MainActivity.this, LoginActivity.class);
+                            startActivity(LoginIntent);
+                            finish();
+
+                        }
+                    })
+                    .setNegativeButton(android.R.string.cancel,new DialogInterface.OnClickListener(){
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    })
+
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -89,17 +118,19 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_Store) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_Account) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_Cart) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_orders) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_Favourite) {
+
+        }else if (id == R.id.nav_Localisation) {
+
+        }else if (id == R.id.nav_Contact) {
 
         }
 

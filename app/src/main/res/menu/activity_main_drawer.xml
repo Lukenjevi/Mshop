@@ -3,33 +3,37 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:id="@+id/nav_Store"
+            android:icon="@drawable/ic_store_mall_directory_black_48dp"
+            android:title="My Store" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_Account"
+            android:icon="@drawable/ic_account_circle_black_48dp"
+            android:title="My Account" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_Cart"
+            android:icon="@drawable/ic_local_store_black_48dp"
+            android:title="My Cart" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_orders"
+            android:icon="@drawable/ic_commandes_black_48dp"
+            android:title="My orders" />
+        <item
+            android:id="@+id/nav_Favourite"
+            android:icon="@drawable/ic_favorite_black_48dp"
+            android:title="My Favourite" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Contact">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_Localisation"
+                android:icon="@drawable/ic_location_on_black_48dp"
+                android:title="Localisation" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_Contact"
+                android:icon="@drawable/ic_contact_phone_black_48dp"
+                android:title="Contact us" />
         </menu>
     </item>
 
